@@ -7,11 +7,11 @@ set_property part xc7a100ticsg324-1L [current_project]
 set_property target_language verilog [current_project]
 set_property default_lib work [current_project]
 
-#read_ip ../stuct_test_ila/stuct_test_ila.xci
+
+read_ip ../struct_test_ila/struct_test_ila.xci
 reset_target all [get_files *.xci]
 upgrade_ip -quiet  [get_ips *]
 generate_target {all} [get_ips *]
-
 
 
 read_verilog -sv    ../struct_test_pkg.sv

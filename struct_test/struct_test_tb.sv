@@ -2,7 +2,7 @@
 
 import struct_test_pkg::*;
 
-module struc_test_tb ();
+module struct_test_tb ();
 
     logic clk = 0; localparam clk_period = 10; always #(clk_period/2) clk = ~clk;
 
@@ -19,8 +19,11 @@ module struc_test_tb ();
         end else begin
         
             for (int i=0; i<4; i++) begin
-                stat1.peak[i] <= stat1.peak[i] + 1;
+                stat1.peak[i] <= stat1.peak[i] + i;
             end
+            
+            stat1.timestamp <= stat1.timestamp + 1;
+            
             stat2 <= stat1;
             
         end
